@@ -99,6 +99,8 @@ add_custom_target(test_unit)
 set(SUBDIRS
   core
   gemm
+  conv
+  convolution
   layout
   transform
   epilogue
