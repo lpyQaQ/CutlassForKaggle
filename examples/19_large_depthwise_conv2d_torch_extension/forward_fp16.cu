@@ -191,8 +191,10 @@ torch::Tensor forward_fp16(torch::Tensor input, torch::Tensor weight) {
 
     Options options = Options();
 
-    options.update({input.size(0), input.size(2), input.size(3), input.size(1)},
-                   {weight.size(0), weight.size(2), weight.size(3), 1});
+    options.update(
+        {(int)input.size(0), (int)input.size(2), (int)input.size(3), (int)input.size(1)},
+        {(int)weight.size(0), (int)weight.size(2), (int)weight.size(3), 1});
+
 
     cutlass::TensorRef<ElementSrc, LayoutSrc> d_src(
             (ElementSrc*)input.data_ptr(),
