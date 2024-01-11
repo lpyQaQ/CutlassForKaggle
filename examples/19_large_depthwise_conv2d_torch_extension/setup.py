@@ -31,5 +31,5 @@ setup(
             extra_compile_args=['-g']),
     ],
     cmdclass={
-        'build_ext': BuildExtension
+        'build_ext': BuildExtension.with_options(use_ninja=False)
     })
